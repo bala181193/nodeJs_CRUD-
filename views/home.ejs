@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width initial-scale-1.0">
+    <title>crud</title>
+
+</head>
+<body>
+    <form action='/add' method="POST">
+        name <input type="text" name="name"><br><br>
+        email<input type="text" name="email"><br><br>
+        mobile<input type="text" name="mobile"><br><br>
+        <input type="submit" value="submit">
+
+    </form><br><br><br>
+    <table border="1px;" cellpadding="5px;" style="border-collapse: collapse; padding: 5px;">
+        <tr>
+            <th>Name</th>
+            <th>email</th>
+            <th>mobile</th>
+            <th>edit</th>
+            <th>delete</th>
+           
+        </tr>
+        <tr>
+            <% employee.forEach(function(employee1){ %>
+                <td><%- employee1.name %></td>
+                <td><%- employee1.email %></td>
+                <td><%- employee1.mobile %></td>
+                <td><a href="/edit/<%- employee1.id %>">edit</a></td>
+                <td><a href="/delete/<%- employee1.id %>">delete</a></td>
+                
+                
+
+            
+        </tr>
+        <% }); %>
+    </table>
+</body>
